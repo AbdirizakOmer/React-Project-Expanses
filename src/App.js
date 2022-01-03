@@ -13,8 +13,8 @@ const App = () => {
       <div id="container" className="flex bg-sky-50">
         <AsideLeft></AsideLeft>
         <main className="grow">
-          <div className="bg-white mx-8 mt-5 shadow shadow-sky-100 px-8 py-5">
-            <h1 className="font-[700] tracking-wider font-nunito">
+          <div className=" bg-blue-900 mx-8  mt-5 shadow shadow-sky-100 px-8 py-5">
+            <h1 className="font-[700] text-white tracking-wider font-nunito">
               Expenses History
             </h1>
 

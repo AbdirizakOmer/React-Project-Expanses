@@ -1,33 +1,35 @@
-import AsideLeft from "./Components/AsideLeft";
-import AsideRight from "./Components/AsideRight";
-import ExpensesItem from "./Components/ExpensesItem";
+import AsideLeft from "./Components/Layout/AsideLeft";
+import AsideRight from "./Components/Layout/AsideRight";
+import Expenses from "./Components/Expenses/Expenses";
 
 const App = () => {
-  const id = "#2232";
-  const name = "Apple MackBook";
-  const status = "Aproved";
-  const amount = 1200;
-  const date = "2021-01-04";
+  const expenses = [
+    {
+      name: "New Mobile",
+      status: "Pending",
+      amount: 499,
+      date: "2022-01-03",
+    },
+    {
+      name: "Macbook Prop",
+      status: "Paid",
+      amount: 1844,
+      date: "2021-12-03",
+    },
+    {
+      name: "Hisense Tv",
+      status: "Paid",
+      amount: 350,
+      date: "2020-10-03",
+    },
+  ];
+
   return (
     <>
       <div id="container" className="flex bg-sky-50">
         <AsideLeft></AsideLeft>
         <main className="grow">
-          <div className=" bg-blue-900 mx-8  mt-5 shadow shadow-sky-100 px-8 py-5">
-            <h1 className="font-[700] text-white tracking-wider font-nunito">
-              Expenses History
-            </h1>
-
-            <div className=" mt-5 bg-gray-50 px-4 py-8 rounded-lg">
-              <ExpensesItem
-                name={name}
-                status={status}
-                amount={amount}
-                date={date}
-                id={id}
-              ></ExpensesItem>
-            </div>
-          </div>
+          <Expenses expenses={expenses}></Expenses>
         </main>
         <AsideRight />
       </div>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import AsideLeft from "./Components/Layout/AsideLeft";
 import AsideRight from "./Components/Layout/AsideRight";
 import Expenses from "./Components/Expenses/Expenses";
@@ -21,7 +22,7 @@ const App = () => {
       date: "2021-12-03",
     },
     {
-      id: "i1",
+      id: "i3",
       name: "Hisense Tv",
       status: "Paid",
       amount: 350,
@@ -29,14 +30,21 @@ const App = () => {
     },
   ];
 
+  const [newData, setNewData] = useState(expenses);
+
+  const saveData = (data) => {
+    setNewData((prev) => [data, ...prev]);
+    
+  };
+
   return (
     <>
       <div id="container" className="flex bg-blue-900">
         <AsideLeft></AsideLeft>
         <main className="grow">
           <Header />
-          <NewExpenses></NewExpenses>
-          <Expenses expenses={expenses}></Expenses>
+          <NewExpenses onSaveData={saveData}></NewExpenses>
+          <Expenses expenses={newData}></Expenses>
         </main>
         <AsideRight />
       </div>
